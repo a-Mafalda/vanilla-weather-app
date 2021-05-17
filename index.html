@@ -23,23 +23,26 @@
     <div class="container">
       <div class="weather-app">
         <div class="row">
-          <div class="col-md-4">MON</div>
-          <div class="col-md-4">TUE</div>
-          <div class="col-md-4">WED</div>
+          <div class="col-md-3">MON</div>
+          <div class="col-md-3">TUE</div>
+          <div class="col-md-3">WED</div>
+          <div class="col-md-3">THU</div>
         </div>
         <div class="mainInfo">
-          <img src="img/mainPic.png" alt="weatherIcon" />
+          <img src="img/mainPic.png" alt="weatherIcon" class="mainPicture" />
           <ul>
-            <li>Lisboa, Hello Sunshine</li>
-            <li>Sunday, May 16 12:30</li>
+            <li class="default-city">Lisboa, Hello Sunshine</li>
+            <li class="current-date">Sunday, May 16 12:30</li>
           </ul>
           <h1>23° | °F</h1>
         </div>
-        <div class="row">
-          <div class="col-md-6">MIN:</div>
-          <div class="col-md-6">MAX:</div>
-          <div class="col-md-6">Precipitation:</div>
-          <div class="col-md-6">WIND:</div>
+        <br />
+        <hr />
+        <div class="row" class="weather-info">
+          <div class="col-6">MIN:</div>
+          <div class="col-6">MAX:</div>
+          <div class="col-6">Precipitation:</div>
+          <div class="col-6">WIND:</div>
         </div>
         <div class="row">
           <div class="col-md-4">Paris</div>
@@ -47,14 +50,14 @@
           <div class="col-md-4">Madrid</div>
         </div>
         <form></form>
-        <small>
-          <a
-            href="https://github.com/a-Mafalda/vanilla-weather-app"
-            target="_blank"
-            >Open-sourced code</a
-          >, by Mafalda Fonseca
-        </small>
       </div>
+      <small>
+        <a
+          href="https://github.com/a-Mafalda/vanilla-weather-app"
+          target="_blank"
+          >Open-sourced code</a
+        >, by Mafalda Fonseca
+      </small>
     </div>
     <script src="src/script.js"></script>
   </body>
