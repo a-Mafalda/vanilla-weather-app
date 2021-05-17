@@ -34,11 +34,14 @@
           <div class="mainInfo">
             <img src="img/mainPic.png" alt="weatherIcon" class="mainPicture" />
             <ul>
-              <li class="default-city">Lisboa, Hello Sunshine</li>
+              <li class="default-city">
+                <span id="currentCity"></span>, <span id="countryCode"></span>
+                <span id="weatherDescription">Hello Sunshine</span>
+              </li>
               <li class="current-date">Sunday, May 16 12:30</li>
             </ul>
             <div class="main-temp">
-              <strong> 23 </strong>
+              <strong id="temperature"> 23 </strong>
               <span class="units">°C | <a href="#"> °F</a></span>
             </div>
           </div>
@@ -46,10 +49,10 @@
           <hr />
           <br />
           <div class="row weather-info">
-            <div class="col-6">MIN: 15°</div>
-            <div class="col-6">MAX: 25°</div>
-            <div class="col-6">Precipitation: 14%</div>
-            <div class="col-6">WIND: 1.71km/h</div>
+            <div class="col-6">Min: <span id="minTemp"></span>°C</div>
+            <div class="col-6">Max: <span id="maxTemp"></span>°C</div>
+            <div class="col-6">Humidity: <span id="humidity"></span>%</div>
+            <div class="col-6">Wind: <span id="wind"></span>km/h</div>
           </div>
           <br />
           <hr />
