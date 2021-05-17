@@ -38,10 +38,14 @@ let wind = document.querySelector("#wind");
 wind.innerHTML= Math.round(response.data.wind.speed);
 let date = document.querySelector("#date");
 date.innerHTML= formatDate(response.data.dt * 1000);
+let icon = document.querySelector("#mainIcon");
+icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lisbon&appid=${apiKey}&units=metric`;
+let city = "lisbon";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 
 axios.get(apiUrl).then(showTemperature);
