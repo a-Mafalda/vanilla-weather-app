@@ -17,47 +17,57 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <title>Weather APP</title>
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <div class="row">
-          <div class="col-md-3">MON</div>
-          <div class="col-md-3">TUE</div>
-          <div class="col-md-3">WED</div>
-          <div class="col-md-3">THU</div>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="row week-forecast">
+            <div class="col-md-3">MON</div>
+            <div class="col-md-3">TUE</div>
+            <div class="col-md-3">WED</div>
+            <div class="col-md-3">THU</div>
+          </div>
+          <div class="mainInfo">
+            <img src="img/mainPic.png" alt="weatherIcon" class="mainPicture" />
+            <ul>
+              <li class="default-city">Lisboa, Hello Sunshine</li>
+              <li class="current-date">Sunday, May 16 12:30</li>
+            </ul>
+            <div class="main-temp">
+              <strong> 23 </strong>
+              <span class="units">°C | <a href="#"> °F</a></span>
+            </div>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <div class="row weather-info">
+            <div class="col-6">MIN: 15°</div>
+            <div class="col-6">MAX: 25°</div>
+            <div class="col-6">Precipitation: 14%</div>
+            <div class="col-6">WIND: 1.71km/h</div>
+          </div>
+          <br />
+          <hr />
+          <div class="row favorite-cities">
+            <div class="col-md-4">Paris</div>
+            <div class="col-md-4">Rome</div>
+            <div class="col-md-4">Madrid</div>
+          </div>
+          <form></form>
         </div>
-        <div class="mainInfo">
-          <img src="img/mainPic.png" alt="weatherIcon" class="mainPicture" />
-          <ul>
-            <li class="default-city">Lisboa, Hello Sunshine</li>
-            <li class="current-date">Sunday, May 16 12:30</li>
-          </ul>
-          <h1>23° | °F</h1>
-        </div>
-        <br />
-        <hr />
-        <div class="row" class="weather-info">
-          <div class="col-6">MIN:</div>
-          <div class="col-6">MAX:</div>
-          <div class="col-6">Precipitation:</div>
-          <div class="col-6">WIND:</div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">Paris</div>
-          <div class="col-md-4">Rome</div>
-          <div class="col-md-4">Madrid</div>
-        </div>
-        <form></form>
+        <small>
+          <a
+            href="https://github.com/a-Mafalda/vanilla-weather-app"
+            target="_blank"
+            >Open-sourced code</a
+          >, by Mafalda Fonseca
+        </small>
       </div>
-      <small>
-        <a
-          href="https://github.com/a-Mafalda/vanilla-weather-app"
-          target="_blank"
-          >Open-sourced code</a
-        >, by Mafalda Fonseca
-      </small>
     </div>
     <script src="src/script.js"></script>
   </body>

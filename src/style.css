@@ -4,10 +4,13 @@ body {
   opacity: 80%;
 }
 
-.weather-app {
+.weather-app-wrapper {
   max-width: 400px;
   max-height: 600px;
   margin: 50px auto;
+}
+
+.weather-app {
   padding: 20px;
   border: 1px solid transparent;
   border-radius: 15px;
@@ -19,18 +22,25 @@ body {
   background-color: rgb(226 229 222);
 }
 
+.week-forecast {
+  text-align: center;
+}
+
 .mainPicture {
   display: block;
   margin: 0 auto;
   padding-top: 40px;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 li {
   list-style: none;
   text-align: center;
   line-height: 19px;
-  margin: 0;
-  padding: 0;
 }
 
 .default-city {
@@ -43,10 +53,30 @@ li {
   font-weight: 300;
 }
 
-h1 {
-  font-size: 48px;
+.main-temp {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.main-temp strong {
+  font-size: 64px;
   font-weight: 600;
   line-height: 28px;
   text-align: center;
-  padding-bottom: 20px;
+}
+
+.main-temp .units {
+  position: relative;
+  font-size: 12px;
+  top: -30px;
+  left: -10px;
+}
+
+.weather-info {
+  position: relative;
+  left: 25px;
+}
+
+.favorite-cities {
+  text-align: center;
 }
