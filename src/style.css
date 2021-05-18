@@ -113,3 +113,26 @@ i {
   font-weight: 600;
   color: rgb(198, 176, 213);
 }
+
+.main-temp .active {
+  color: #676767;
+  cursor: default;
+}
+a {
+  text-decoration: none;
+  color: rgb(198, 176, 213);
+}
+
+a:hover {
+  color: rgb(198, 176, 213);
+}
+
+small {
+  color: #676767;
+  font-size: 12px;
+}
+
+.footnote {
+  color: #676767;
+  font-size: 12px;
+}
