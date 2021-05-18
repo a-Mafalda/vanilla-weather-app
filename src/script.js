@@ -39,7 +39,7 @@ wind.innerHTML= Math.round(response.data.wind.speed);
 let date = document.querySelector("#date");
 date.innerHTML= formatDate(response.data.dt * 1000);
 let icon = document.querySelector("#mainIcon");
-icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+icon.setAttribute("src", `img/icons/${response.data.weather[0].icon}.png`);
 icon.setAttribute("alt", response.data.weather[0].description);
 }
 
