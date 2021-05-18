@@ -24,6 +24,7 @@ body {
 
 .week-forecast {
   text-align: center;
+  font-size: 16px;
 }
 
 .mainPicture {
@@ -77,10 +78,6 @@ li {
   left: 25px;
 }
 
-.favorite-cities {
-  text-align: center;
-}
-
 input[type="search"] {
   border: none;
   box-shadow: none;
@@ -121,6 +118,15 @@ i {
 a {
   text-decoration: none;
   color: rgb(198, 176, 213);
+}
+
+.favorite-cities {
+  text-align: center;
+  font-size: 16px;
+}
+
+.city1 {
+  color: #676767;
 }
 
 a:hover {

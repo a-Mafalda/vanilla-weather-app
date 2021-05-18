@@ -41,6 +41,7 @@ date.innerHTML= formatDate(response.data.dt * 1000);
 let icon = document.querySelector("#mainIcon");
 icon.setAttribute("src", `img/icons/${response.data.weather[0].icon}.png`);
 icon.setAttribute("alt", response.data.weather[0].description);
+cityOne.setAttribute("src", `img/icons/${response.data.weather[0].icon}.png`);
 celsiusTemperature = response.data.main.temp;
 }
 
@@ -56,6 +57,17 @@ function submit(event) {
     event.preventDefault();
     let cityInput = document.querySelector("#city-input");
     search(cityInput.value);
+}
+
+function searchLocation(position){
+    let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showTemperature);
+}
+
+function displayCurrentLocation(event){
+event.preventDefault();
+navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 function showFahrenheit(event){
@@ -77,6 +89,13 @@ function showCelsius(event){
  
 }
 
+function showCityOneIcon(event){
+ event.preventDefault();
+ 
+ axios.get(apiUrl).then(showTemperature);
+}
+
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-engine");
@@ -86,4 +105,9 @@ fahrenheitValue.addEventListener("click", showFahrenheit);
 let celsiusValue = document.querySelector("#celsius");
 celsiusValue.addEventListener("click", showCelsius);
 
-search("Lisbon");
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", displayCurrentLocation);
+search("Berlin");
+
+let cityOne = document.querySelector("#city1");
+cityOne.addEventListener("click", showCityOneIcon);
