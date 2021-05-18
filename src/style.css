@@ -46,7 +46,6 @@ li {
 
 .default-city {
   font-size: 16px;
-  padding-top: 10px;
 }
 
 .current-date {
@@ -80,4 +79,37 @@ li {
 
 .favorite-cities {
   text-align: center;
+}
+
+input[type="search"] {
+  border: none;
+  box-shadow: none;
+  height: 30px;
+  outline: 0;
+  width: 160px;
+  margin: 5px 20px;
+  background-color: rgb(226 229 222);
+  display: inline;
+}
+
+::placeholder {
+  color: rgb(198, 176, 213);
+  font-weight: 600;
+}
+
+input[type="submit"] {
+  box-shadow: none;
+  margin-top: 3px;
+  color: rgb(198, 176, 213);
+  font-weight: 600;
+}
+
+button {
+  margin-top: 5px;
+}
+
+i {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(198, 176, 213);
 }

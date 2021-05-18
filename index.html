@@ -11,6 +11,7 @@
     />
 
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -47,21 +48,41 @@
           </div>
           <br />
           <hr />
-          <br />
+          
           <div class="row weather-info">
             <div class="col-6">Min: <span id="minTemp"></span>°C</div>
             <div class="col-6">Max: <span id="maxTemp"></span>°C</div>
             <div class="col-6">Humidity: <span id="humidity"></span>%</div>
             <div class="col-6">Wind: <span id="wind"></span>km/h</div>
           </div>
-          <br />
+          
           <hr />
           <div class="row favorite-cities">
-            <div class="col-md-4">Paris</div>
-            <div class="col-md-4">Rome</div>
-            <div class="col-md-4">Madrid</div>
+            <div class="col-md-3">Paris</div>
+            <div class="col-md-3">Rome</div>
+            <div class="col-md-3">Madrid</div>
+            <div class="col-md-3">London</div>
           </div>
-          <form></form>
+          <hr />
+          <div class="row">
+            <div class="col-6">
+            <form id="search-engine">
+              <input
+                type="search"
+                placeholder="Let's go somewhere..."
+                class="form-control-sm mb-3"
+                id="city-input"
+              />
+              </div>
+              <div class="col-3">
+              <input type="submit" class="form-control-sm btn" 
+              value="Go!" />
+              </div>
+              <div class="col-3">
+                <button class="form-control-sm btn border-0"><i class="fas fa-map-marker"></i></button>
+              </div>
+            </form>
+          </div>
         </div>
         <small>
           <a

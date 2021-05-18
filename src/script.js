@@ -43,9 +43,17 @@ icon.setAttribute("src", `img/icons/${response.data.weather[0].icon}.png`);
 icon.setAttribute("alt", response.data.weather[0].description);
 }
 
+function search(event) {
+    event.preventDefault();
+    let cityInput = document.querySelector("#city-input");
+    console.log();
+}
+
 let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
 let city = "lisbon";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-
 axios.get(apiUrl).then(showTemperature);
+
+let form = document.querySelector("#search-engine");
+form.addEventListener("submit", search);
