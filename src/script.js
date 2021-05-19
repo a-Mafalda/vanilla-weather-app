@@ -89,17 +89,45 @@ function showCelsius(event){
  
 }
 
-function showCityOneIcon(event){
+let celsiusTemperature = null;
+
+function showCityOne(event){
  event.preventDefault();
  let cityOne = "Paris";
- 
  let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityOne}&appid=${apiKey}&units=metric`;
  axios.get(apiUrl).then(showTemperature);
 }
+function showCityTwo(event){
+ event.preventDefault();
+ let cityTwo = "Rome";
+ let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityTwo}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(showTemperature);
+}
+function showCityThree(event){
+ event.preventDefault();
+ let cityThree = "Madrid";
+ let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityThree}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(showTemperature);
+}
+function showCityFour(event){
+ event.preventDefault();
+ let cityFour = "London";
+ let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityFour}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(showTemperature);
+}
+let cityOne = document.querySelector("#city1");
+cityOne.addEventListener("click", showCityOne);
+let cityTwo = document.querySelector("#city2");
+cityTwo.addEventListener("click", showCityTwo);
+let cityThree = document.querySelector("#city3");
+cityThree.addEventListener("click", showCityThree);
+let cityFour = document.querySelector("#city4");
+cityFour.addEventListener("click", showCityFour);
 
-
-let celsiusTemperature = null;
 
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", submit);
@@ -110,9 +138,5 @@ celsiusValue.addEventListener("click", showCelsius);
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", displayCurrentLocation);
-
-
-let cityOne = document.querySelector("#city1");
-cityOne.addEventListener("click", showCityOneIcon);
 
 search("Berlin");
