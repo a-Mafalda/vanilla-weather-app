@@ -41,7 +41,7 @@ date.innerHTML= formatDate(response.data.dt * 1000);
 let icon = document.querySelector("#mainIcon");
 icon.setAttribute("src", `img/icons/${response.data.weather[0].icon}.png`);
 icon.setAttribute("alt", response.data.weather[0].description);
-cityOne.setAttribute("src", `img/icons/${response.data.weather[0].icon}.png`);
+
 celsiusTemperature = response.data.main.temp;
 }
 
@@ -91,7 +91,9 @@ function showCelsius(event){
 
 function showCityOneIcon(event){
  event.preventDefault();
- 
+ let cityOne = "Paris";
+ let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityOne}&appid=${apiKey}&units=metric`;
  axios.get(apiUrl).then(showTemperature);
 }
 
@@ -107,7 +109,9 @@ celsiusValue.addEventListener("click", showCelsius);
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", displayCurrentLocation);
-search("Berlin");
+
 
 let cityOne = document.querySelector("#city1");
 cityOne.addEventListener("click", showCityOneIcon);
+
+search("Berlin");
