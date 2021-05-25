@@ -33,7 +33,7 @@ function showForecast(response) {
         if (index < 4) {
         forecastHTML =  forecastHTML + `
         <div class="col-md-3"> ${formatDay(forecastDay.dt)}
-        <img src="img/iconsForecast/${forecastDay.weather[0].icon}.png" alt="" width="30px">
+        <img src="img/iconsForecast/${forecastDay.weather[0].icon}.png" alt="${forecastDay.weather[0].description}" width="30px">
         
         </div>
          `; }
@@ -165,14 +165,14 @@ function showCityFour(event){
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityFour}&appid=${apiKey}&units=metric`;
  axios.get(apiUrl).then(showTemperature);
 }
-let cityOne = document.querySelector("#city1");
-cityOne.addEventListener("click", showCityOne);
-let cityTwo = document.querySelector("#city2");
-cityTwo.addEventListener("click", showCityTwo);
-let cityThree = document.querySelector("#city3");
-cityThree.addEventListener("click", showCityThree);
-let cityFour = document.querySelector("#city4");
-cityFour.addEventListener("click", showCityFour);
+let cityOne = document.querySelector("#city1").addEventListener("click", showCityOne);
+
+let cityTwo = document.querySelector("#city2").addEventListener("click", showCityTwo);
+
+let cityThree = document.querySelector("#city3").addEventListener("click", showCityThree);
+
+let cityFour = document.querySelector("#city4").addEventListener("click", showCityFour);
+
 
 
 
