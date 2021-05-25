@@ -176,6 +176,6 @@ cityFour.addEventListener("click", showCityFour);
 
 
 
-search("Berlin");
+search("Lisboa");
 
 
