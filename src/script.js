@@ -17,24 +17,32 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${todayDate} ${hours}:${minutes}` ;
 }
 
+function formatDay(timestamp){
+let date = new Date(timestamp * 1000);
+let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]; 
+let day = date.getDay();
+return days[day];
+}
+
 function showForecast(response) {
-    console.log(response.data.daily);
+    let forecastData = response.data.daily;
     let forecast = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
-    let forecastDays = ["WED", "THU", "FRI", "SAT"];
-    forecastDays.forEach(function(day) { 
+    
+    forecastData.forEach(function(forecastDay, index) { 
+        if (index < 4) {
         forecastHTML =  forecastHTML + `
-        <div class="col-md-3"> ${day}
-        <img src="img/iconsForecast/04n.png" alt="" width="30px">
+        <div class="col-md-3"> ${formatDay(forecastDay.dt)}
+        <img src="img/iconsForecast/${forecastDay.weather[0].icon}.png" alt="" width="30px">
         
         </div>
-         `;
-         })
+         `; }
+         }) 
     
     forecastHTML = forecastHTML + `</div>`;     
     forecast.innerHTML = forecastHTML;
-
-    }
+        }
+    
 
 function callForecast(coordinates){
 console.log(coordinates);
