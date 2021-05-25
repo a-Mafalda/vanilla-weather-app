@@ -17,28 +17,32 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${todayDate} ${hours}:${minutes}` ;
 }
 
-function showForecast() {
+function showForecast(response) {
+    console.log(response.data.daily);
     let forecast = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
     let forecastDays = ["WED", "THU", "FRI", "SAT"];
     forecastDays.forEach(function(day) { 
         forecastHTML =  forecastHTML + `
         <div class="col-md-3"> ${day}
-        <img src="img/iconsForecast/04n.png" alt="" width="35px">
+        <img src="img/iconsForecast/04n.png" alt="" width="30px">
+        
         </div>
          `;
-         
-
-    })
-    
-    
+         })
     
     forecastHTML = forecastHTML + `</div>`;     
     forecast.innerHTML = forecastHTML;
 
-     
-}
+    }
 
+function callForecast(coordinates){
+console.log(coordinates);
+let apiKey = "656ac87c5034b9f4933b4a4211cbca36";
+let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+console.log(apiUrl);
+axios.get(apiUrl).then(showForecast);
+}    
 
 function showTemperature(response){
 console.log(response.data);
@@ -63,7 +67,7 @@ date.innerHTML= formatDate(response.data.dt * 1000);
 let icon = document.querySelector("#mainIcon");
 icon.setAttribute("src", `img/icons/${response.data.weather[0].icon}.png`);
 icon.setAttribute("alt", response.data.weather[0].description);
- 
+ callForecast(response.data.coord);
 celsiusTemperature = response.data.main.temp;
 }
 
@@ -123,6 +127,7 @@ fahrenheitValue.addEventListener("click", showFahrenheit);
 let celsiusValue = document.querySelector("#celsius");
 celsiusValue.addEventListener("click", showCelsius);
 
+// Favourite Cities 
 
 function showCityOne(event){
  event.preventDefault();
@@ -161,7 +166,7 @@ cityThree.addEventListener("click", showCityThree);
 let cityFour = document.querySelector("#city4");
 cityFour.addEventListener("click", showCityFour);
 
-showForecast();
+
 
 search("Berlin");
 
