@@ -17,6 +17,28 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${todayDate} ${hours}:${minutes}` ;
 }
 
+function showForecast() {
+    let forecast = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let forecastDays = ["WED", "THU", "FRI", "SAT"];
+    forecastDays.forEach(function(day) { 
+        forecastHTML =  forecastHTML + `
+        <div class="col-md-3"> ${day}
+        <img src="img/iconsForecast/04n.png" alt="" width="35px">
+        </div>
+         `;
+         
+
+    })
+    
+    
+    
+    forecastHTML = forecastHTML + `</div>`;     
+    forecast.innerHTML = forecastHTML;
+
+     
+}
+
 
 function showTemperature(response){
 console.log(response.data);
@@ -70,6 +92,9 @@ event.preventDefault();
 navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", displayCurrentLocation);
+
 function showFahrenheit(event){
  event.preventDefault();
  let temperature = document.querySelector("#temperature");
@@ -90,6 +115,14 @@ function showCelsius(event){
 }
 
 let celsiusTemperature = null;
+
+let form = document.querySelector("#search-engine");
+form.addEventListener("submit", submit);
+let fahrenheitValue = document.querySelector("#fahrenheit");
+fahrenheitValue.addEventListener("click", showFahrenheit);
+let celsiusValue = document.querySelector("#celsius");
+celsiusValue.addEventListener("click", showCelsius);
+
 
 function showCityOne(event){
  event.preventDefault();
@@ -128,15 +161,8 @@ cityThree.addEventListener("click", showCityThree);
 let cityFour = document.querySelector("#city4");
 cityFour.addEventListener("click", showCityFour);
 
-
-let form = document.querySelector("#search-engine");
-form.addEventListener("submit", submit);
-let fahrenheitValue = document.querySelector("#fahrenheit");
-fahrenheitValue.addEventListener("click", showFahrenheit);
-let celsiusValue = document.querySelector("#celsius");
-celsiusValue.addEventListener("click", showCelsius);
-
-let currentLocationButton = document.querySelector("#current-location");
-currentLocationButton.addEventListener("click", displayCurrentLocation);
+showForecast();
 
 search("Berlin");
+
+
