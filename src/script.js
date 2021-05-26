@@ -18,6 +18,8 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${todayDate} ${hours}:${minutes}` ;
 }
 
+// Forecast 
+
 function formatDay(timestamp){
 let date = new Date(timestamp * 1000);
 let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]; 
@@ -25,7 +27,6 @@ let day = date.getDay();
 return days[day];
 }
 
-// Forecast 
 
 function showForecast(response) {
     let forecastData = response.data.daily;
